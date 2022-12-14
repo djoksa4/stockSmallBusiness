@@ -1,0 +1,113 @@
+$whitecoffee: #e5e2cc;
+$accent: #498b49;
+$dark-gray: #18181b;
+$light-gray: #212125;
+
+.hero {
+  height: 600px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 230px;
+  position: relative;
+  z-index: -1;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../../public/imgs/freshBeans.jpg");
+  background-size: cover;
+  background-position: 50% 30%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__svg {
+    fill: rgba($accent, 0.8);
+    height: 70px;
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+    margin-bottom: 60px;
+    color: $whitecoffee;
+    font-size: 10rem;
+    font-family: "Expletus Sans";
+    font-weight: 300;
+    line-height: 0.7;
+    letter-spacing: 0.5rem;
+
+    text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.8);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      left: -10%;
+      width: 120%;
+      height: 2px;
+      background: rgba($accent, 0.3);
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: -10%;
+      width: 120%;
+      height: 2px;
+      background: rgba($accent, 0.3);
+      z-index: -1;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: rgba($accent, 0.9);
+    font-size: 1.5rem;
+    font-family: "Expletus Sans";
+    font-weight: 800;
+    letter-spacing: 0.8rem;
+    font-style: italic;
+    text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.8);
+  }
+
+  &__fadeBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+
+    background: linear-gradient(
+      rgba($dark-gray, 0),
+      rgba($dark-gray, 0.2) 20%,
+      rgba($dark-gray, 1)
+    );
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero {
+    height: 550px;
+    padding: 130px 30px 0;
+
+    &__title {
+      font-size: 7rem;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &__subtitle {
+      font-size: 1.4rem;
+      text-align: center;
+      letter-spacing: 0.1rem;
+    }
+  }
+}

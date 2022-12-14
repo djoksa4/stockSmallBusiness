@@ -1,0 +1,62 @@
+$whitecoffee: #e5e2cc;
+$accent: #498b49;
+
+.socials {
+  position: fixed;
+  top: 40%;
+  left: 2px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: left;
+  z-index: 999;
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 8px 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+    opacity: 0.8;
+    font-size: 14px;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    a {
+      height: 35px;
+    }
+  }
+
+  &__svg {
+    height: 35px;
+    width: 35px;
+    fill: rgba($whitecoffee, 0.9);
+    transition: all 0.15s ease-out;
+
+    &:hover {
+      fill: rgba($accent, 0.9);
+      transform: scale(110%);
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .socials {
+    top: 3px;
+    left: 5px;
+
+    &__links {
+      flex-direction: row;
+      gap: 10px;
+      background: transparent;
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .socials {
+    left: calc((100% - 1600px) / 2 + 2px);
+  }
+}

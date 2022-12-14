@@ -1,0 +1,164 @@
+$whitecoffee: #e5e2cc;
+$accent: #498b49;
+$dark-gray: #18181b;
+
+.reviews {
+  height: 600px;
+  max-width: 1600px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 80px 60px;
+  margin: 20px;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../../public/imgs/smilingglasses.jpg");
+  background-size: cover;
+  background-position: 50% 80%;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__cardsContainer {
+    margin-top: -110px;
+    position: absolute;
+    right: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  &__heroReview {
+    max-width: 35%;
+
+    h1 {
+      padding-bottom: 10px;
+      margin: 0;
+      margin-bottom: 15px;
+      color: $whitecoffee;
+      font-size: 75px;
+      line-height: 1.1;
+      text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.8);
+
+      border-bottom: 2px solid rgba($accent, 0.5);
+      border-top: 2px solid rgba($accent, 0.5);
+    }
+
+    h3 {
+      margin: 0;
+      color: $accent;
+      font-size: 25px;
+      text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  &__contact {
+    width: 40%;
+
+    &Link {
+      width: max-content;
+      margin-top: 65%;
+      margin-left: 3%;
+      padding-left: 25%;
+
+      border-bottom: 2px solid rgba($accent, 0.5);
+      border-top: 2px solid rgba($accent, 0.5);
+      transition: all 100ms;
+
+      &:hover,
+      &:focus {
+        border-bottom: 2px solid rgba($whitecoffee, 0.1);
+        border-top: 2px solid rgba($whitecoffee, 0.1);
+
+        a {
+          color: $accent;
+        }
+      }
+
+      a {
+        line-height: 1.2;
+        color: rgba($whitecoffee, 0.8);
+        font-family: "Expletus Sans";
+        font-weight: 500;
+        font-size: 28px;
+        text-decoration: none;
+        text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.8);
+        transition: all 100ms ease-in;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .reviews {
+    margin: 20px auto;
+    position: relative;
+    box-sizing: border-box;
+
+    &__cardsContainer {
+      max-width: 1600px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .reviews {
+    &__heroReview {
+      h1 {
+        font-size: 65px;
+      }
+    }
+
+    &__contact {
+      &Link {
+        margin-top: 120%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .reviews {
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 0px 20px;
+    height: 800px;
+
+    background-position: 45%;
+
+    &__cardsContainer {
+      right: 0;
+      top: 75px;
+      justify-content: center;
+      gap: 0;
+    }
+
+    &__heroReview {
+      max-width: 100%;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 33px;
+        margin: 0;
+        padding-bottom: 3px;
+        width: fit-content;
+      }
+      h3 {
+        font-size: 18px;
+      }
+    }
+
+    &__contact {
+      width: 100%;
+
+      &Link {
+        margin: 75px auto 30px;
+        padding: 0;
+        a {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

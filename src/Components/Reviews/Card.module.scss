@@ -1,0 +1,106 @@
+$whitecoffee: #e5e2cc;
+$accent: rgb(73, 139, 73);
+$dark-gray: #18181b;
+
+.card {
+  width: 200px;
+  height: 280px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 100ms ease-in;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:hover &__content {
+    h3 {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__tint {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: linear-gradient(rgba($accent, 0.2), rgba(black, 0.9) 80%);
+    transition: all 100ms ease-in;
+
+    &:hover {
+      padding-bottom: 35px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(rgba($accent, 0.3), rgba(black, 0.7) 75%);
+      z-index: 1;
+      transition: opacity 100ms ease-in;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    z-index: 2;
+    cursor: default;
+
+    h3 {
+      position: relative;
+      width: max-content;
+      color: $accent;
+      text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.8);
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: calc(100% + 20px);
+        background: $accent;
+        left: -(20px);
+        bottom: -2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 150ms ease-in;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-family: "Expletus Sans";
+      font-size: 15px;
+      color: rgba($whitecoffee, 0.8);
+      text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .card {
+    transform: scale(0.9);
+
+    &__tint {
+    }
+
+    &__content {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
