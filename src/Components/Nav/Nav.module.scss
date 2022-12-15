@@ -17,7 +17,7 @@ $light-gray: #212125;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
+  z-index: 1001;
 
   &__solid {
     background-color: rgba(0, 0, 0, 0.5);
@@ -110,7 +110,7 @@ $light-gray: #212125;
     height: 100%;
     backdrop-filter: blur(4px);
     background-color: rgba(0, 0, 0, 0.3);
-    z-index: 3;
+    z-index: 1000;
 
     display: flex;
     flex-direction: column;
